@@ -5,8 +5,6 @@ import * as emailController from '../controllers/emailController';
 
 const router = Router();
 
-router.get('/ping', ApiController.ping);
-
 router.get('/', emailController.contato);
 
 export default router;
