@@ -16,16 +16,26 @@ export const contato = async (req: Request, res: Response) => {
             pass: process.env.SENHA as string
         }
     });
+    
+    const {name,email,mensage,subject} = req.query as string;
 
     let mensage = {
-        from:req.query.name as string,
+        from:name,
         to:['mielszrx1@gmail.com'],
         replyTo:'mielszrx1@gmial.com',
-        subject:req.query.subject as string,
-        html:'',
-        text:`Email:${req.query.email as string}||
-        Mensagem ${req.query.mensage as string}`
+        subject:subject,
+        html:`Email:<strong>${email}</strong><br />
+        Mensagem: <strong>${mensage}</strong>`,
+        text:`Email:${email}||
+        Mensagem: ${mensage}`
     }
+    
+    if(!email && !mensage){
+        res.json({error:'Mensagem vazia, preencha o formulário corretamente para que possa ser feito o envio :)'});
+        return;
+    }
+    
+   
 
     await transport.sendMail(mensage);
 
