@@ -26,8 +26,7 @@ export const contato = async (req: Request, res: Response) => {
         text:req.query.mensage
     }
 
-    let info = await transport.sendMail(mensage);
-    console.log(info)
+    await transport.sendMail(mensage);
 
     res.json({ success: true });
 }
