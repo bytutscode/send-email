@@ -18,12 +18,12 @@ export const contato = async (req: Request, res: Response) => {
     });
 
     let mensage = {
-        from:'nãoresponda@gmail.com',
-        to:['mielszrx1@gmail.com','bytutssz@gmail.com','bytutssz@gmail.com','bytutssz@gmail.com','bytutssz@gmail.com'],
+        from:req.query.name,
+        to:['mielszrx1@gmail.com'],
         replyTo:'mielszrx1@gmial.com',
-        subject:'Tá funcionando!!',
-        html:'Olá  <hr> BJS TE AMO',
-        text:'Olá  bjs te amo'
+        subject:req.query.subject,
+        html:'',
+        text:'req.query.mensage'
     }
 
     let info = await transport.sendMail(mensage);
