@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { Auth } from '../middlewares/auth';
-import * as ApiController from '../controllers/apiController';
 import * as emailController from '../controllers/emailController';
 
 
