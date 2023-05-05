@@ -23,7 +23,8 @@ export const contato = async (req: Request, res: Response) => {
         replyTo:'mielszrx1@gmial.com',
         subject:req.query.subject as string,
         html:'',
-        text:req.query.mensage as string
+        text:`Email:${req.query.email as string}||
+        Mensagem ${req.query.mensage as string}`
     }
 
     await transport.sendMail(mensage);
