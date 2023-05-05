@@ -19,7 +19,7 @@ export const contato = async (req: Request, res: Response) => {
     
     let {name,email,mensage,subject} = req.query;
 
-    let mensage = {
+    let mensageConfig = {
         from:name as string,
         to:['mielszrx1@gmail.com'],
         replyTo:'mielszrx1@gmial.com',
@@ -37,7 +37,7 @@ export const contato = async (req: Request, res: Response) => {
     
    
 
-    await transport.sendMail(mensage);
+    await transport.sendMail(mensageConfig);
 
     res.json({ success: true });
 }
