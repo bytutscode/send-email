@@ -17,7 +17,7 @@ export const contato = async (req: Request, res: Response) => {
         }
     });
     
-    const {name,email,mensage,subject} = req.query as string;
+    let {name,email,mensage,subject} = req.query as string;
 
     let mensage = {
         from:name,
