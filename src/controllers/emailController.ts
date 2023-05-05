@@ -39,5 +39,5 @@ export const contato = async (req: Request, res: Response) => {
 
     await transport.sendMail(mensageConfig);
 
-    res.json({ success: true });
+    res.redirect('www.google.com');
 }
