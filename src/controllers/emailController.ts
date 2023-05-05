@@ -17,17 +17,17 @@ export const contato = async (req: Request, res: Response) => {
         }
     });
     
-    let {name,email,mensage,subject} = req.query as string;
+    let {name,email,mensage,subject} = req.query;
 
     let mensage = {
-        from:name,
+        from:name as string,
         to:['mielszrx1@gmail.com'],
         replyTo:'mielszrx1@gmial.com',
-        subject:subject,
-        html:`Email:<strong>${email}</strong><br />
-        Mensagem: <strong>${mensage}</strong>`,
-        text:`Email:${email}||
-        Mensagem: ${mensage}`
+        subject:subject as string,
+        html:`Email:<strong>${email as string}</strong><br />
+        Mensagem: <strong>${mensage as string}</strong>`,
+        text:`Email:${email as string}||
+        Mensagem: ${mensage as string}`
     }
     
     if(!email && !mensage){
