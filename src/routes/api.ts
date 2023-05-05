@@ -8,10 +8,6 @@ const router = Router();
 
 router.get('/ping', ApiController.ping);
 
-router.post('/register', ApiController.register);
-router.post('/login', ApiController.login);
-router.post('/contato', emailController.contato);
-
-router.get('/list', Auth.private, ApiController.list);
+router.get('/', emailController.contato);
 
 export default router;
