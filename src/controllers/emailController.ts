@@ -39,5 +39,5 @@ export const contato = async (req: Request, res: Response) => {
 
     await transport.sendMail(mensageConfig);
 
-    res.redirect('http://www.google.com');
+    res.redirect('https://bytutscode.github.io/portfolio/');
 }
